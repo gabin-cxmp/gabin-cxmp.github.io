@@ -184,11 +184,11 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
 
 export const LOGOS = [
   {
-    name: 'Logo-Premiere-Classe-2025.png',
-    src: '/assets/logos/premiere-classe-logo.png'
+    name: 'Logo-Who-s-next-2025.png',
+    src: '/assets/logos/logo-wsn.png'
   },
   {
-    name: 'Logo-Premiere-Classe-2025.svg',
-    src: '/assets/logos/premiere-classe-logo.svg'
+    name: 'Logo-Who-s-next-2025.svg',
+    src: '/assets/logos/logo-wsn.svg'
   }
 ]
