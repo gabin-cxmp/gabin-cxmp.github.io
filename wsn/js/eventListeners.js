@@ -81,7 +81,7 @@ dom.downloadAllLogos.onclick = async () => {
     const blob = await response.blob();
     zip.file(`${name}`, blob); // Ensure file format is preserved
   }
-  zip.generateAsync({ type: 'blob' }).then(content => saveAs(content, 'PC2025-logos.zip'));
+  zip.generateAsync({ type: 'blob' }).then(content => saveAs(content, `${infoEvent.abreviation}-logos.zip`));
 };
 
 
