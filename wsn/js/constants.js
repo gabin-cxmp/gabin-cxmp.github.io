@@ -23,8 +23,8 @@ export const dom = {
   };
 
 export const infoEvent = {
-  name: 'Premiere Classe 2025',
-  abreviation: 'PC25'
+  name: "WHO'S NEXT 2025",
+  abreviation: 'WSN-25'
 }
 
 export const SOCIALS = [
