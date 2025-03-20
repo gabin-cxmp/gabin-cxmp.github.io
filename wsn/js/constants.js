@@ -2,7 +2,7 @@
 
 export const dom = {
     logoUpload: document.getElementById('logoUpload'),
-    standLetterInput: document.getElementById('standLetter'),
+    hallNumberInput: document.getElementById('hallNumber'),
     standNumberInput: document.getElementById('standNumber'),
     generatedImagesSection: document.querySelector('.generated-images'),
     imagesContainer: document.querySelector('.images-container'),
@@ -15,7 +15,7 @@ export const dom = {
     generatePicturesSection : document.querySelector('.generated-pictures'),
     pictureUpload: document.getElementById('pictureUpload'),
     standNumberPictures: document.getElementById('standNumberPictures'),
-    standLetterPictures : document.getElementById('standLetterPictures'),
+    hallNumberPictures : document.getElementById('hallNumberPictures'),
     croppieContainer: document.getElementById('croppie-container'),
     picturesContainer: document.querySelector('.pictures-container'),
     downloadAllPicturesButton: document.getElementById('downloadAllPicturesButton'),

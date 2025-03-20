@@ -5,7 +5,7 @@ import { createElement } from "./utils.js";
 import { createTitleSocialsContainer } from "./utils.js";
 import { createDownloadButton } from "./utils.js";
 
-export const generateImage = async (format, logoImg, /*standLetter,*/ standNumber) => {
+export const generateImage = async (format, logoImg, standNumber) => {
     const scaleFactor = 2;
     const [originalWidth, originalHeight] = format.dimensions;
     const scaledWidth = originalWidth * scaleFactor;
