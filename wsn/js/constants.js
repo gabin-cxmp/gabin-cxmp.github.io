@@ -185,10 +185,6 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
 export const LOGOS = [
   {
     name: 'Logo-Who-s-next-2025.png',
-    src: '/assets/logos/logo-wsn.png'
-  },
-  {
-    name: 'Logo-Who-s-next-2025.svg',
-    src: '/assets/logos/logo-wsn.svg'
+    src: '/assets/logos/logo-whosnext.png'
   }
 ]
