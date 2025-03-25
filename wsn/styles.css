@@ -3,6 +3,10 @@
   src: url(assets/fonts/CAMechano_v1010-Regular.otf);
 }
 
+button[data-tab="customized-banners"], #customized-banners {
+    display: none !important;
+}
+
 html{
   overflow-x: hidden;
 }
