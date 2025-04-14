@@ -158,68 +158,40 @@ dom.submitButtonPictures.addEventListener('click', async () => {
 });
 
 
-// 1. Generic click handler for [data-button-id] elements
 document.addEventListener('click', (event) => {
   const button = event.target.closest('[data-button-id]');
-  if (!button) return;
-  
-  const buttonId = button.getAttribute('data-button-id');
-  
-  // Special case: Skip GTM push for submit button (let specific handler manage it)
-  if (button.id === 'submitButton') {
-    return; 
-  }
-  
-  // Default handling for other buttons
-  if (button.tagName === 'A' && !button.hasAttribute('download')) {
-    event.preventDefault();
-  }
-  
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'downloadButtonClick',
-    buttonId: buttonId
-  });
-});
-
-// 2. Specific enhanced handler for submit button
-const initStandNumberTracking = () => {
-  const submitButton = document.getElementById('submitButton');
-  const standNumberElement = document.getElementById('standNumber');
-  
-  if (!submitButton) {
-    console.warn('Submit button not found');
-    return;
-  }
-  
-  submitButton.addEventListener('click', (event) => {
-    // Get both the stand number and button ID
-    const standNumberValue = standNumberElement?.value || 'stand number not set';
-    const buttonId = submitButton.getAttribute('data-button-id');
+  if (button) {
+    const buttonId = button.getAttribute('data-button-id');
     
+    // Optional: prevent navigation for <a> tags if needed
+    if (button.tagName === 'A' && !button.hasAttribute('download')) {
+      event.preventDefault(); 
+    }
+    
+    // Send event to GTM
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'standNumberSubmit',       // Your original event
-      standNumberInput: standNumberValue,
-      
-      // Also include the button ID data
-      buttonId: buttonId,
-      eventContext: 'banner-creation'  // Optional: helps distinguish in GTM
-    });
-    
-    // For debugging
-    console.log('Submitted with:', {
-      standNumber: standNumberValue,
+      event: 'downloadButtonClick',
       buttonId: buttonId
     });
-  });
-};
+  }
+});
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initStandNumberTracking);
-} else {
-  initStandNumberTracking();
+const submitButton = document.getElementById('submitButton');
+
+if (submitButton) {
+  submitButton.addEventListener('click', () => {
+    const standNumberElement = document.getElementById('standNumber');
+    const standNumberInput = standNumberElement ? standNumberElement.value : null;
+
+    const standNumberValue = standNumberInput ? standNumberInput : 'stand number not set';
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'standNumberSubmit',
+      standNumberInput: standNumberValue
+    });
+  });
 }
 
 
