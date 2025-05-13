@@ -6,7 +6,6 @@ import { FORMATS_CUSTOMIZED_BANNERS } from './constants-loader.js';
 import { LOGOS } from './constants-loader.js';
 import { createElement } from './utils.js';
 import { generateImage } from './customizedBanners.js';
-import { generatePictures } from './bannersWithPicture.js';
 
 let croppieInstance; 
 
@@ -14,9 +13,6 @@ dom.logoUpload.addEventListener('change', () => {
     dom.fileNameDisplay.textContent = document.documentElement.lang === 'en' ? dom.logoUpload.files[0]?.name || '(No file chosen)' : dom.logoUpload.files[0]?.name || '(Aucun fichier choisi)';
   });
 
-dom.pictureUpload.addEventListener('change', () => {
-    dom.fileNamePictures.textContent = document.documentElement.lang === 'en' ? dom.logoUpload.files[0]?.name || '(No file chosen)' : dom.logoUpload.files[0]?.name || '(Aucun fichier choisi)';
-});
   
 dom.submitButton.addEventListener('click', async () => {
     const { logoUpload, hallNumberInput, standNumberInput, generatedImagesSection, imagesContainer } = dom;
@@ -99,65 +95,6 @@ const tabPanes = document.querySelectorAll('.tab-pane');
     });
 
 
-// Initialize Croppie when an image is uploaded
-dom.pictureUpload.addEventListener('change', function (e) {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      if (croppieInstance) {
-        croppieInstance.destroy(); // Destroy existing instance if any
-      }
-      // Initialize Croppie
-      croppieInstance = new Croppie(dom.croppieContainer, {
-        viewport: { width: 290.14, height: 254.5, type: 'square' }, // Cropping area
-        boundary: { width: 320, height: 300 }, // Container size
-        enableOrientation: true // Allow rotation
-      });
-      // Bind the uploaded image to Croppie
-      croppieInstance.bind({
-        url: e.target.result
-      });
-    };
-    reader.readAsDataURL(file); // Read the file as a data URL
-  }
-});
-
-dom.submitButtonPictures.addEventListener('click', async () => {
-  if (!croppieInstance) return alert(document.documentElement.lang === 'en' ? 'Please upload and crop an image first' : "Veuillez d'abord importer et recadrer une image" );
-  
-  const standNumber = dom.standNumberPictures.value.trim();
-  if (!standNumber) return alert(document.documentElement.lang === 'en' ? 'Please enter a stand number' : 'Veuillez saisir un numéro de stand');
-  
-  const hallNumber = dom.hallNumberPictures.value.trim();
-  if (!hallNumber) return alert(document.documentElement.lang === 'en' ? 'Please enter an Aisle letter' : "Veuillez saisir une la lettre de allée de votre stand");
-  
-  dom.picturesContainer.innerHTML = '';
-  dom.generatePicturesSection.style.display = "block";
-  const loadingSpinner = document.createElement('div');
-  loadingSpinner.className = 'loading-spinner';
-  dom.picturesContainer.appendChild(loadingSpinner);
-  
-  // Get the cropped image as a base64 string
-  const croppedImgData = await croppieInstance.result({ type: 'base64', size: {width:1293.75 , height: 1145.25}});
-  console.log(croppedImgData); // Should log a base64 string
-
-  // Create an image element from the base64 string
-  const croppedImg = new Image();
-  croppedImg.src = croppedImgData;
-  await new Promise(resolve => croppedImg.onload = resolve);
-
-  // Now, generate pictures using the cropped image
-  const imageData = await generatePictures(croppedImg, hallNumber, standNumber);
-  
-  loadingSpinner.remove();
-  dom.picturesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  dom.downloadAllPicturesButton.style.display = 'block';
-  dom.downloadAllPicturesButton.onclick = () => downloadAllPictures(imageData);
-});
-
-
 document.addEventListener('click', (event) => {
   const button = event.target.closest('[data-button-id]');
   if (button) {
@@ -191,6 +128,8 @@ if (submitButton) {
       event: 'standNumberSubmit',
       standNumberInput: standNumberValue
     });
+
+    console.log(window.dataLayer)
   });
 }
 

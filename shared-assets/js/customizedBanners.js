@@ -36,9 +36,10 @@ export const generateImage = async (format, logoImg, hallNumber, standNumber) =>
     const logoY = logoCenterY * scaleFactor - scaledLogoHeight / 2;
   
     highResCtx.drawImage(logoImg, logoX, logoY, scaledLogoWidth, scaledLogoHeight);
-  
+
+    const [fontSize, fontFamily] = format.font.split(/(?<=px) /);
     highResCtx.fillStyle = '#010000';
-    highResCtx.font = `${parseInt(format.font) * scaleFactor}px NueueHaasDisplayMedium`;
+    highResCtx.font = `${parseInt(fontSize) * scaleFactor}px ${fontFamily}`;
     highResCtx.textAlign = 'right';
     highResCtx.fillText(`BOOTH N.${standNumber}`, format.standLetterPosition[0] * scaleFactor, format.standLetterPosition[1] * scaleFactor);
   
