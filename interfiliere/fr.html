@@ -201,59 +201,6 @@
             </div>
           </div>
         </div>
-        <div id="pic-banners" class="tab-pane">
-          <div class="container-border">
-            <div class="section form-and-preview_container">
-              <div class="form_wrapper">
-                <!-- Stand Number Input -->
-                <div class="input-group">
-                  <label for="standNumberPictures">Saisissez votre numéro de stand</label>
-                  <p class="label-description">Saisissez les références de votre stand ci-dessous.</p>
-                  <div class="inputs_wrapper">
-                    <div class="input_wrapper">
-                      <p>Numéro du Hall: </p>
-                      <input type="text" autocapitalize="on" value="1" id="hallNumberPictures" maxlength="1" disabled>
-                    </div>
-                    <div class="input_wrapper">
-                      <p>Numéro de stand: </p>
-                      <input type="number" id="standNumberPictures" placeholder="147" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
-                    </div>
-                  </div>
-                </div>
-      
-                <!-- Logo Upload -->
-                <div class="input-group">
-                  <label for="pictureUpload">Importez votre image</label>
-                  <p class="label-description">Importez votre image (png, jpeg, jpg) puis cliquez sur le bouton « Créer vos bannières ».</p>
-                  <div class="input_wrapper_croppie">
-                    <div class="image-input-container">
-                      <input type="file" id="pictureUpload" accept="image/*">
-                      <label for="pictureUpload" class="custom-file-button">+</label>
-                      <span class="file-name-pictures">(Aucun fichier choisi)</span>
-                    </div>
-                    <div id="croppie-container"></div>
-                  </div>
-                </div>
-      
-                <!-- Submit Button -->
-                <button id="submitButtonPictures">Créez vos bannières</button>
-              </div>
-              <!-- Preview Section -->
-              <div class="preview">
-                <h2>Exemple de bannière:</h2>
-                <div class="preview-design-pictures"></div>
-              </div>
-            </div>
-          </div>
-          <!-- Generated Images Section -->
-          <div class="section generated-pictures" style="display: none;">
-            <h2>Téléchargez votre kit média</h2>
-            <ul class="pictures-container">
-              <!-- Placeholder for generated images -->
-            </ul>
-            <button id="downloadAllPicturesButton" class="download-button">Tout télécharger</button>
-          </div>
-        </div>
         <div id="tradeshow-logos" class="tab-pane">
           <div class="container-border">
             <div class="section logos_wrapper">
