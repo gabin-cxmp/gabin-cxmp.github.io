@@ -138,49 +138,6 @@ export const SOCIALS = [
     font: '12px NueueHaasDisplayMedium'
    }
   ];
-  
-export const FORMATS_BANNERS_WITH_PICTURES = [
-  { 
-    nameEN: 'Landscape format', 
-    nameFR:'Format paysage', 
-    templateEN: 'assets/banners-with-pictures/picture-template_landscape.png', 
-    templateFR: 'assets/banners-with-pictures/picture-template_landscape.png', 
-    description: '(1080x1080)', 
-    socials: ['instagram', 'facebook', 'x'], 
-    dimensions: [1920, 1080], 
-    picturePosition: [1280.58, 636.1], 
-    standLetterPosition: [1537.8, 605.2], 
-    pictureSize: [435.21, 381.75], 
-    font: '52'
-   },
-  { 
-    nameEN: 'Landscape format', 
-    nameFR:'Format paysage', 
-    templateEN: 'assets/banners-with-pictures/picture-template_landscape.png', 
-    templateFR: 'assets/banners-with-pictures/picture-template_landscape.png', 
-    description: '(1080x1080)', 
-    socials: ['instagram', 'facebook', 'x'], 
-    dimensions: [1920, 1080], 
-    picturePosition: [1280.58, 636.1], 
-    standLetterPosition: [1537.8, 605.2], 
-    pictureSize: [435.21, 381.75], 
-    font: '52'
-   },
-  { 
-    nameEN: 'Story format', 
-    nameFR: 'Format story', 
-    templateEN: 'assets/banners-with-pictures/picture-template_portrait.png', 
-    templateFR: 'assets/banners-with-pictures/picture-template_portrait.png', 
-    description: '(1080x1920)', 
-    socials: ['instagram', 'facebook', 'tiktok'], 
-    dimensions: [1080, 1350], 
-    picturePosition: [183.86, 277.46], 
-    standLetterPosition: [424.61, 142.89], 
-    pictureSize: [473.5, 415.34], 
-    font: '52'
-   }
-]
-
 
 export const LOGOS = [
   {
