@@ -2,7 +2,7 @@
 
 export const dom = {
     logoUpload: document.getElementById('logoUpload'),
-    hallNumberInput: document.getElementById('hallNumber'),
+    tentSelectInput: document.getElementById('tents'),
     standNumberInput: document.getElementById('standNumber'),
     generatedImagesSection: document.querySelector('.generated-images'),
     imagesContainer: document.querySelector('.images-container'),
@@ -10,16 +10,7 @@ export const dom = {
     submitButton: document.getElementById('submitButton'),
     downloadAllButton: document.getElementById('downloadAllButton'),
     genericDownloadAll: document.getElementById('generic-downloadAll'),
-    fileNamePictures: document.querySelector('.file-name-pictures'),
-    submitButtonPictures: document.getElementById('submitButtonPictures'),
-    generatePicturesSection : document.querySelector('.generated-pictures'),
-    pictureUpload: document.getElementById('pictureUpload'),
-    standNumberPictures: document.getElementById('standNumberPictures'),
-    hallNumberPictures : document.getElementById('hallNumberPictures'),
-    croppieContainer: document.getElementById('croppie-container'),
-    picturesContainer: document.querySelector('.pictures-container'),
-    downloadAllPicturesButton: document.getElementById('downloadAllPicturesButton'),
-    downloadAllLogos: document.getElementById('downloadAllLogos')
+    downloadAllLogos: document.getElementById('downloadAllLogos'),
   };
 
 export const infoEvent = {
@@ -50,6 +41,7 @@ export const SOCIALS = [
     dimensions: [1080, 1080], 
     logoCenter: [540, 1033], 
     standLetterPosition: [1080-67, 1043], 
+    tentPosition : [67, 1043],
     maxLogoSize: [200, 70], 
     font: '32px Brockmann' 
   },
@@ -64,6 +56,7 @@ export const SOCIALS = [
     dimensions: [1080, 1920], 
     logoCenter: [540, 1873], 
     standLetterPosition: [1080-67, 1883], 
+    tentPosition : [67, 1883],
     maxLogoSize: [200, 70], 
     font: '32px Brockmann' 
   },
@@ -78,6 +71,7 @@ export const SOCIALS = [
     dimensions: [1080, 1350], 
     logoCenter: [540, 1303], 
     standLetterPosition: [1080-67, 1313], 
+    tentPosition : [67, 1313],
     maxLogoSize: [200, 70], 
     font: '32px Brockmann' 
   },
@@ -91,7 +85,8 @@ export const SOCIALS = [
     socials: ['linkedin'], 
     dimensions: [1584, 396], 
     logoCenter: [792, 351], 
-    standLetterPosition: [1584-67, 362], 
+    standLetterPosition: [1584-67, 362],
+    tentPosition : [67, 362],
     maxLogoSize: [200, 70], 
     font: '32px Brockmann'
    },
@@ -106,6 +101,7 @@ export const SOCIALS = [
     dimensions: [1200, 628], 
     logoCenter: [600, 583], 
     standLetterPosition: [1200-67, 594], 
+    tentPosition : [67, 594],
     maxLogoSize: [200, 70], 
     font: '32px Brockmann'
    },
@@ -119,7 +115,8 @@ export const SOCIALS = [
     socials: ['mail'], 
     dimensions: [600, 140], 
     logoCenter: [300, 127], 
-    standLetterPosition: [600-19, 131], 
+    standLetterPosition: [600-19, 131],
+    tentPosition : [19, 131], 
     maxLogoSize: [70, 18], 
     font: '10px Brockmann'
    },
@@ -133,7 +130,8 @@ export const SOCIALS = [
     socials: ['google-ads', 'meta'], 
     dimensions: [300, 250], 
     logoCenter: [150, 237], 
-    standLetterPosition: [300-19, 241], 
+    standLetterPosition: [300-19, 241],
+    tentPosition : [19, 241], 
     maxLogoSize: [34, 18], 
     font: '10px Brockmann'
    }
