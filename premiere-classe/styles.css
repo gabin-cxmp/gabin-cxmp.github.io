@@ -224,7 +224,7 @@ label {
 
 input[type="file"],
 input[type="text"], 
-input[type="number"] {
+input[type="number"]{
   font-family: "Arimo", serif;
   width: 100%;
   padding: 10px;
@@ -253,6 +253,33 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     appearance: textfield;
     -moz-appearance: textfield;
+}
+
+.form-select{
+  position: relative;
+}
+
+.form-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: "Arimo", serif;
+  width: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+}
+      
+.form-select:before {
+  position: absolute;
+  top: 22px;
+  right: 16px;
+  content: ' ';
+  margin-top: -5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  pointer-events: none;
 }
 
 #logoUpload, #pictureUpload{
