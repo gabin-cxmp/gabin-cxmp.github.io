@@ -2,7 +2,6 @@
 
 export const dom = {
     logoUpload: document.getElementById('logoUpload'),
-    hallNumberInput: document.getElementById('hallNumber'),
     standNumberInput: document.getElementById('standNumber'),
     generatedImagesSection: document.querySelector('.generated-images'),
     imagesContainer: document.querySelector('.images-container'),
@@ -10,14 +9,6 @@ export const dom = {
     submitButton: document.getElementById('submitButton'),
     downloadAllButton: document.getElementById('downloadAllButton'),
     genericDownloadAll: document.getElementById('generic-downloadAll'),
-    fileNamePictures: document.querySelector('.file-name-pictures'),
-    submitButtonPictures: document.getElementById('submitButtonPictures'),
-    generatePicturesSection : document.querySelector('.generated-pictures'),
-    pictureUpload: document.getElementById('pictureUpload'),
-    standNumberPictures: document.getElementById('standNumberPictures'),
-    hallNumberPictures : document.getElementById('hallNumberPictures'),
-    croppieContainer: document.getElementById('croppie-container'),
-    picturesContainer: document.querySelector('.pictures-container'),
     downloadAllPicturesButton: document.getElementById('downloadAllPicturesButton'),
     downloadAllLogos: document.getElementById('downloadAllLogos')
   };
