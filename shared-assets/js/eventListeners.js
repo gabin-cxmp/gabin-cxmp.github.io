@@ -7,7 +7,6 @@ import { LOGOS } from './constants-loader.js';
 import { createElement } from './utils.js';
 import { generateImage } from './customizedBanners.js';
 
-let croppieInstance; 
 
 dom.logoUpload.addEventListener('change', () => {
     dom.fileNameDisplay.textContent = document.documentElement.lang === 'en' ? dom.logoUpload.files[0]?.name || '(No file chosen)' : dom.logoUpload.files[0]?.name || '(Aucun fichier choisi)';
@@ -15,12 +14,11 @@ dom.logoUpload.addEventListener('change', () => {
 
   
 dom.submitButton.addEventListener('click', async () => {
-    const { logoUpload, hallNumberInput, standNumberInput, generatedImagesSection, imagesContainer } = dom;
+    const { logoUpload, tentSelectInput, standNumberInput, generatedImagesSection, imagesContainer } = dom;
     const logoFile = logoUpload.files[0];
-    const hallNumber = hallNumberInput.value;
     const standNumber = standNumberInput.value;
   
-    if (!logoFile || !hallNumber || !standNumber) {
+    if (!logoFile || !standNumber) {
       return alert(document.documentElement.lang === 'en' ? 'Please fill all fields.' : 'Veuillez remplir tous les champs.');
     }
   
@@ -33,7 +31,7 @@ dom.submitButton.addEventListener('click', async () => {
     logoImg.src = URL.createObjectURL(logoFile);
     await new Promise(resolve => logoImg.onload = resolve);
   
-    const imageData = await Promise.all(FORMATS_CUSTOMIZED_BANNERS.map(format => generateImage(format, logoImg, hallNumber, standNumber)));
+    const imageData = await Promise.all(FORMATS_CUSTOMIZED_BANNERS.map(format => generateImage(format, logoImg, tentSelectInput ? tentSelectInput.value.toUpperCase() : "", standNumber)));
   
     loadingSpinner.remove();
     generatedImagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -52,16 +50,6 @@ const downloadAllImages = (imageData) => {
     zip.generateAsync({ type: 'blob' }).then(content => saveAs(content, document.documentElement.lang === 'en' ? `My-Customized-Logo-${infoEvent.abreviation}-Kit.zip` : `Mon-Kit-${infoEvent.abreviation}-avec-Logo.zip`));
 };
 
-const downloadAllPictures = (imageData) => {
-  const zip = new JSZip();
-  const folder = zip.folder('generated_pictures');
-  imageData.forEach(({ imageURL, fileName }) => {
-    const base64Data = imageURL.split(',')[1];
-    folder.file(fileName, base64Data, { base64: true });
-  });
-  zip.generateAsync({ type: 'blob' }).then(content => saveAs(content, document.documentElement.lang === 'en' ? `My-Customized-Picture-${infoEvent.abreviation}-Kit.zip` : `Mon-Kit-${infoEvent.abreviation}-avec-Image.zip`));
-};
-  
 dom.genericDownloadAll.onclick = async () => {
     const zip = new JSZip();
     await Promise.all([...document.querySelectorAll('.generic-banners')].map(async img => 

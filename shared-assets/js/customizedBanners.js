@@ -6,7 +6,7 @@ import { createElement } from "./utils.js";
 import { createTitleSocialsContainer } from "./utils.js";
 import { createDownloadButton } from "./utils.js";
 
-export const generateImage = async (format, logoImg, hallNumber, standNumber) => {
+export const generateImage = async (format, logoImg, tentSelect, standNumber) => {
     const scaleFactor = 2;
     const [originalWidth, originalHeight] = format.dimensions;
     const scaledWidth = originalWidth * scaleFactor;
@@ -42,6 +42,11 @@ export const generateImage = async (format, logoImg, hallNumber, standNumber) =>
     highResCtx.font = `${parseInt(fontSize) * scaleFactor}px ${fontFamily}`;
     highResCtx.textAlign = 'right';
     highResCtx.fillText(`BOOTH N.${standNumber}`, format.standLetterPosition[0] * scaleFactor, format.standLetterPosition[1] * scaleFactor);
+
+    if( tentSelect ){
+      highResCtx.textAlign = "left";
+      highResCtx.fillText(`${tentSelect} TENT`, format.tentPosition[0] * scaleFactor, format.tentPosition[1] * scaleFactor);
+    }
   
     const finalCanvas = createElement('canvas', { width: originalWidth, height: originalHeight });
     const finalCtx = finalCanvas.getContext('2d');
