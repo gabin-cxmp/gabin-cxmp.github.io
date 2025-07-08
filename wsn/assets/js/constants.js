@@ -232,10 +232,10 @@ export const SOCIALS = [
 export const LOGOS = [
   {
     name: 'Logo-Who-s-next-2025.png',
-    src: '/assets/logos/logo-whosnext.png'
+    src: '../wsn/assets/logos/logo-whosnext.png'
   },
   {
     name: 'Logo-Who-s-next-2025.svg',
-    src: '/assets/logos/logo-interfiliere.svg'
+    src: '../wsn/assets/logos/logo-interfiliere.svg'
   }
 ]
