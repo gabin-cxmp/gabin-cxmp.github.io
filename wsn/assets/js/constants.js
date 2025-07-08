@@ -236,6 +236,6 @@ export const LOGOS = [
   },
   {
     name: 'Logo-Who-s-next-2025.svg',
-    src: '../wsn/assets/logos/logo-interfiliere.svg'
+    src: '../wsn/assets/logos/logo-whosnext.svg'
   }
 ]
