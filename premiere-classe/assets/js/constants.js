@@ -140,10 +140,10 @@ export const SOCIALS = [
 export const LOGOS = [
   {
     name: 'Logo-Premiere-Classe.png',
-    src: '/assets/logos/logo-premiere-classe.png'
+    src: '../premiere-classe/assets/logos/logo-premiere-classe.png'
   },
   {
     name: 'Logo-Premiere-Classe.svg',
-    src: '/assets/logos/logo-premiere-classe.svg'
+    src: '../premiere-classe/assets/logos/logo-premiere-classe.svg'
   }
 ]
