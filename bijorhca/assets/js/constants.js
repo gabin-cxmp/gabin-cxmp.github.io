@@ -124,10 +124,10 @@ export const infoEvent = {
 export const LOGOS = [
   {
     name: 'Logo-Bijorhca-2025.png',
-    src: '/assets/logos/logo-bijorhca.png'
+    src: 'assets/logos/logo-bijorhca.png'
   },
   {
     name: 'Logo-Bijorhca-2025.svg',
-    src: '/assets/logos/logo-bijorhca.svg'
+    src: 'assets/logos/logo-bijorhca.svg'
   }
 ]
