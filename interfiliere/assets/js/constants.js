@@ -133,7 +133,7 @@ export const SOCIALS = [
 export const LOGOS = [
   {
     name: 'Logo-Interfiliere-2025.png',
-    src: '../interfiliere/assets/logos/logo-interfiliere.svg'
+    src: '../interfiliere/assets/logos/logo-interfiliere.png'
   },
   {
     name: 'Logo-Interfiliere-2025.svg',
